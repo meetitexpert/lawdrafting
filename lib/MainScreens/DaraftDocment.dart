@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, no_logic_in_create_state, must_be_immutable, unused_local_variable
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, no_logic_in_create_state, must_be_immutable, unused_local_variable, slash_for_doc_comments
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:lawdrafting/MainScreens/PDF/PdfReport.dart';
@@ -362,7 +362,8 @@ class _DaraftDocumentState extends State<DaraftDocument> {
           IconButton(
               icon: Icon(Icons.share_sharp),
               onPressed: () {
-                shareOption();
+                _onStartCardEntryFlow();
+                // shareOption();
               })
         ],
       ),
@@ -472,6 +473,7 @@ class _DaraftDocumentState extends State<DaraftDocument> {
   */
   void _onCancelCardEntryFlow() {
     // Handle the cancel callback
+    debugPrint('Payment not done');
   }
 
   /**
@@ -480,6 +482,7 @@ class _DaraftDocumentState extends State<DaraftDocument> {
   */
   void _onCardEntryCardNonceRequestSuccess(CardDetails result) async {
     try {
+      debugPrint(result.nonce);
       // take payment with the card nonce details
       // you can take a charge
       // await chargeCard(result);
@@ -489,10 +492,11 @@ class _DaraftDocumentState extends State<DaraftDocument> {
       // this ONLY apply to startCardEntryFlow, please don't call this method when use startCardEntryFlowWithBuyerVerification
       InAppPayments.completeCardEntry(
           onCardEntryComplete: _onCardEntryComplete);
-    } on Exception catch (ex) {
+    } on Exception catch (_) {
       // payment failed to complete due to error
       // notify card entry to show processing error
-      InAppPayments.showCardNonceProcessingError('Sorry! Payment not done');
+      InAppPayments.showCardNonceProcessingError(
+          'Sorry! Payment not done. Please try again later');
     }
   }
 

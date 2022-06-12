@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:lawdrafting/MainScreens/GeneralPowerOfAttorny.dart';
 import 'package:lawdrafting/MainScreens/SpecialPowerOfAttorny.dart';
 import 'package:lawdrafting/Utils/ColorTools.dart';
-import 'package:square_in_app_payments/in_app_payments.dart';
-// import 'package:square_in_app_payments/models.dart';
-
 import '../Utils/PixelTools.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -57,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     optionsList[index],
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontFamily: 'Jameel_Noori',
+                        fontFamily: 'JameelNoori',
                         fontWeight: FontWeight.bold,
                         fontSize: 25,
                         color: Colors.white),
