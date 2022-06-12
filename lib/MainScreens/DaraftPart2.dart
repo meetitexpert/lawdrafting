@@ -35,7 +35,10 @@ class _DaraftPart2State extends State<DaraftPart2> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Image Picker"),
+          title: Text(
+            "Image Picker",
+            style: TextStyle(fontFamily: 'JameelNoori', fontSize: 30),
+          ),
         ),
         body: ListView(
           children: [
@@ -51,7 +54,7 @@ class _DaraftPart2State extends State<DaraftPart2> {
                     },
                     child: Text(
                       "PICK FROM GALLERY",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                   ),
                   SizedBox(
@@ -64,7 +67,7 @@ class _DaraftPart2State extends State<DaraftPart2> {
                     },
                     child: Text(
                       "PICK FROM CAMERA",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.white, fontSize: 15),
                     ),
                   )
                 ],
@@ -150,7 +153,7 @@ class _DaraftPart2State extends State<DaraftPart2> {
             SizedBox(
               height: 10,
             ),
-            if (imageFiles.length > 0)
+            if (imageFiles.isNotEmpty)
               Text(
                 '  دہندہ',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
@@ -180,7 +183,10 @@ class _DaraftPart2State extends State<DaraftPart2> {
                   height: 50,
                   padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                   child: ElevatedButton(
-                    child: const Text('اگلا پیج'),
+                    child: const Text(
+                      'اگلا پیج',
+                      style: TextStyle(fontFamily: 'JameelNoori', fontSize: 20),
+                    ),
                     onPressed: () {
                       Navigator.push(
                           context,

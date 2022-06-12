@@ -23,7 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
         MediaQuery.of(context).size.width, MediaQuery.of(context).size.height);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text(
+          'Home',
+          style: TextStyle(fontFamily: 'JameelNoori', fontSize: 30),
+        ),
         automaticallyImplyLeading: false,
         /*actions: [
           IconButton(
@@ -56,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                         fontFamily: 'JameelNoori',
                         fontWeight: FontWeight.bold,
-                        fontSize: 25,
+                        fontSize: 35,
                         color: Colors.white),
                   ),
                   onPressed: () {

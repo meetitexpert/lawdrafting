@@ -6,7 +6,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:pdf/widgets.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 
 File? GarhindaImageFile;
@@ -270,7 +269,7 @@ Future<String> reportView(
   final String dir = (await getApplicationDocumentsDirectory()).path;
   final String path = '$dir/outPut.pdf';
   final File file = File(path);
-  file.writeAsBytesSync(List.from(await document.save()));
+  file.writeAsBytesSync(List.from(document.save()));
 
   return path;
 }

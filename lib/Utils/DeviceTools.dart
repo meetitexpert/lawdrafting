@@ -1,5 +1,4 @@
 import 'package:device_info_plus/device_info_plus.dart';
-
 import 'dart:io';
 import 'AppTools.dart';
 
@@ -9,7 +8,7 @@ import 'AppTools.dart';
     */
 Future<dynamic> getDeviceInfo() async {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  var device;
+  BaseDeviceInfo? device;
   if (Platform.isIOS) {
     IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
     device = iosInfo;

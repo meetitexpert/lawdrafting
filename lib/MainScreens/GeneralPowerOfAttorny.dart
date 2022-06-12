@@ -105,7 +105,10 @@ class _GeneralPowerAttornyState extends State<GeneralPowerAttorny> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('مختار نامہ عام'),
+        title: const Text(
+          'مختار نامہ عام',
+          style: TextStyle(fontFamily: 'JameelNoori', fontSize: 30),
+        ),
       ),
       body: ListView(
         children: [
@@ -458,7 +461,10 @@ class _GeneralPowerAttornyState extends State<GeneralPowerAttorny> {
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: ElevatedButton(
-                child: const Text('اگلا پیج'),
+                child: const Text(
+                  'اگلا پیج',
+                  style: TextStyle(fontFamily: 'JameelNoori', fontSize: 20),
+                ),
                 onPressed: () {
                   detailSaveAndPasstoNextScreen();
                 },

@@ -110,7 +110,10 @@ class _SpecialPowerAttornyState extends State<SpecialPowerAttorny> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('مختار نامہ خاص'),
+        title: Text(
+          'مختار نامہ خاص',
+          style: TextStyle(fontFamily: 'JameelNoori', fontSize: 30),
+        ),
       ),
       body: ListView(
         children: [
@@ -463,7 +466,10 @@ class _SpecialPowerAttornyState extends State<SpecialPowerAttorny> {
               height: 50,
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: ElevatedButton(
-                child: const Text('اگلا پیج'), //چیک کریں
+                child: const Text(
+                  'اگلا پیج',
+                  style: TextStyle(fontFamily: 'JameelNoori', fontSize: 20),
+                ), //چیک کریں
                 onPressed: () {
                   detailSaveAndPasstoNextScreen();
                 },

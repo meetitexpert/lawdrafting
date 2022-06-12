@@ -53,7 +53,6 @@ dependencies:
   syncfusion_flutter_pdf: ^20.1.58-beta
   share_plus: ^4.0.6
   dio: ^4.0.6
-  square_in_app_payments: ^1.7.4
 
 dev_dependencies:
   flutter_test:

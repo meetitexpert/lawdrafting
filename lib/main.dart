@@ -11,15 +11,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'Utils/AppTools.dart';
 import 'Utils/ConstTools.dart';
 import 'Utils/DeviceTools.dart';
-import 'package:square_in_app_payments/in_app_payments.dart';
-import 'package:square_in_app_payments/models.dart';
+// import 'package:square_in_app_payments/in_app_payments.dart';
+// import 'package:square_in_app_payments/models.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  _initSquarePayment();
-  if (Platform.isIOS) {
-    await _setIOSCardEntryTheme();
-  }
+
   await AppTools.init();
   DeviceTools.init();
   ConstTools.prefs = await SharedPreferences.getInstance();
@@ -29,31 +26,6 @@ Future main() async {
   ]);
 
   runApp(const MyApp());
-}
-
-Future<void> _initSquarePayment() async {
-  await InAppPayments.setSquareApplicationId(
-      'sandbox-sq0idb-dLdppGXEmxjFBX4X3DK-mA');
-}
-
-Future _setIOSCardEntryTheme() async {
-  var themeConfiguationBuilder = IOSThemeBuilder();
-  themeConfiguationBuilder.saveButtonTitle = 'Pay';
-  themeConfiguationBuilder.errorColor = RGBAColorBuilder()
-    ..r = 255
-    ..g = 0
-    ..b = 0;
-  themeConfiguationBuilder.tintColor = RGBAColorBuilder()
-    ..r = 36
-    ..g = 152
-    ..b = 141;
-  themeConfiguationBuilder.keyboardAppearance = KeyboardAppearance.light;
-  themeConfiguationBuilder.messageColor = RGBAColorBuilder()
-    ..r = 114
-    ..g = 114
-    ..b = 114;
-
-  await InAppPayments.setIOSCardEntryTheme(themeConfiguationBuilder.build());
 }
 
 class MyApp extends StatelessWidget {
@@ -76,6 +48,7 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primarySwatch: ColorTools.applicationColor,
+          fontFamily: 'JameelNoori',
         ),
         home: const HomeScreen());
   }

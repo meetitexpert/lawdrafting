@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:lawdrafting/Utils/ConstTools.dart';
 
 import '../Utils/AppTools.dart';
-import '../Utils/DeviceTools.dart';
-import 'package:date_format/date_format.dart';
 
 import '../Utils/DialogTools.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -183,7 +181,7 @@ class HttpService {
         DialogTools.alertDialg(
             "OK",
             "",
-            "Sorry, we are experiencing http ${result} issue at this time. Please try again later.\nError Code: 104",
+            "Sorry, we are experiencing http $result issue at this time. Please try again later.\nError Code: 104",
             context);
       } else if (error == HttpErrorType.other) {
         DialogTools.alertDialg(
